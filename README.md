@@ -1,8 +1,6 @@
 Got it 👍 — since the code was forked from another repository, we’ll update the README to reflect that origin. Here’s the revised version:
 
 ---
-
-```markdown
 # DevOps CI/CD Pipeline Project 🚀
 
 ## 📌 Overview
