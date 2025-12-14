@@ -3,7 +3,7 @@
 
 ## 📌 Overview
 This project demonstrates a complete CI/CD pipeline setup on an **AWS EC2 server** using **Jenkins**.  
-The application code was **forked from an existing GitHub repository**, then integrated into this pipeline for automated build, test, and deployment.
+The application code was **taken from an existing GitHub repository**, then integrated into this pipeline for automated build, test, and deployment.
 
 The pipeline automates the following:
 - Pulling code from **GitHub**
@@ -21,7 +21,7 @@ The pipeline automates the following:
    - Jenkins, Docker, SonarQube, and Trivy installed and configured.
 
 2. **Jenkins Pipeline**  
-   - **Stage 1:** Checkout forked code from GitHub  
+   - **Stage 1:** Checkout code from GitHub  
    - **Stage 2:** Code quality analysis via SonarQube Scanner  
    - **Stage 3:** Build application using Maven  
    - **Stage 4:** Build Docker images (App + DB)  
@@ -45,14 +45,14 @@ The pipeline automates the following:
 ---
 
 ## 🚀 Deployment Instructions
-1. **Clone Forked Repository**
+1. **Clone  Repository**
    ```bash
-   git clone <forked-repo-url>
+   git clone <repo-url>
    cd <project-folder>
    ```
 
 2. **Configure Jenkins Pipeline**
-   - Add forked GitHub repo in Jenkins pipeline configuration
+   - Add GitHub repo in Jenkins pipeline configuration
    - Set SonarQube server details in Jenkins global configuration
    - Add DockerHub credentials in Jenkins
 
@@ -73,7 +73,7 @@ The pipeline automates the following:
 ---
 
 ## ✅ Outcome
-- Fully automated CI/CD pipeline from **forked code commit → quality check → build → security scan → deployment**.  
+- Fully automated CI/CD pipeline from **code commit → quality check → build → security scan → deployment**.  
 - Application and database run as containers orchestrated by Docker Compose.
 
 ---
