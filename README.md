@@ -82,4 +82,4 @@ The pipeline automates the following:
 - Ensure EC2 instance has sufficient resources (CPU/RAM) for Jenkins, SonarQube, and Docker.  
 - SonarQube requires Java; Eclipse Temurin plugin ensures compatibility.  
 - DockerHub credentials must be securely stored in Jenkins credentials manager.
-```
+
