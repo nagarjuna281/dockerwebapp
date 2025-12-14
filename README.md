@@ -6,7 +6,7 @@ This project demonstrates a complete CI/CD pipeline setup on an **AWS EC2 server
 The application code was **forked from an existing GitHub repository**, then integrated into this pipeline for automated build, test, and deployment.
 
 The pipeline automates the following:
-- Pulling forked source code from **GitHub**
+- Pulling code from **GitHub**
 - Performing **code quality analysis** with **SonarQube**
 - Building the application with **Maven**
 - Creating **Docker images** for both the application and database
@@ -83,7 +83,3 @@ The pipeline automates the following:
 - SonarQube requires Java; Eclipse Temurin plugin ensures compatibility.  
 - DockerHub credentials must be securely stored in Jenkins credentials manager.
 ```
-
----
-
-Would you like me to also add a **diagram of the pipeline flow** (in ASCII or Markdown style) so the README visually shows how the forked repo moves through each stage?
