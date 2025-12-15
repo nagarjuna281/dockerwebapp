@@ -1,85 +1,84 @@
+# CI/CD Pipeline Project with Jenkins, Docker, and SonarQube
 
-# DevOps CI/CD Pipeline Project 🚀
-
-## 📌 Overview
-This project demonstrates a complete CI/CD pipeline setup on an **AWS EC2 server** using **Jenkins**.  
-The application code was **taken from an existing GitHub repository**, then integrated into this pipeline for automated build, test, and deployment.
-
-The pipeline automates the following:
-- Pulling code from **GitHub**
-- Performing **code quality analysis** with **SonarQube**
-- Building the application with **Maven**
-- Creating **Docker images** for both the application and database
-- Running **Trivy security scans** on images
-- Pushing images to **DockerHub**
-- Deploying services with **Docker Compose**, where the app depends on the database
+## 📌 Project Overview
+This project demonstrates a complete CI/CD pipeline setup on an AWS EC2 instance (t2.large).  
+The pipeline automates code fetching, quality analysis, building, containerization, security scanning, and deployment.
 
 ---
 
-## ⚙️ Architecture Flow
-1. **EC2 Server Setup**  
-   - Jenkins, Docker, SonarQube, and Trivy installed and configured.
-
-2. **Jenkins Pipeline**  
-   - **Stage 1:** Checkout code from GitHub  
-   - **Stage 2:** Code quality analysis via SonarQube Scanner  
-   - **Stage 3:** Build application using Maven  
-   - **Stage 4:** Build Docker images (App + DB)  
-   - **Stage 5:** Scan images with Trivy  
-   - **Stage 6:** Push images to DockerHub  
-   - **Stage 7:** Deploy using Docker Compose (App depends on DB)
-
-3. **Docker Compose Deployment**  
-   - `app` service configured with `depends_on` for `db` service  
-   - Ensures DB container starts before the application container
+## ⚙️ Infrastructure
+- **AWS EC2 Instance:** t2.large
+- **Operating System:** Amazon Linux 2
 
 ---
 
-## 🛠️ Jenkins Plugins Installed
-- **Docker Pipeline** – for building and publishing Docker images  
-- **Eclipse Temurin Installer** – installs Java (Temurin JDK) for Maven builds  
-- **SonarQube Scanner** – integrates SonarQube analysis into pipeline  
-- **Pipeline Stage View** – provides visual representation of pipeline stages  
-- **NodeJS** – manages Node.js installations if required by the project  
+## 🔧 Jenkins Setup
+Installed the following plugins:
+- Docker Pipeline
+- Pipeline Stage View
+- NodeJS
+- Eclipse Temurin Installer
+- SonarQube Scanner
 
 ---
 
-## 🚀 Deployment Instructions
-1. **Clone  Repository**
-   ```bash
-   git clone <repo-url>
-   cd <project-folder>
-   ```
+## 🚀 Pipeline Stages
+1. **Workspace Cleanup**  
+   - `cleanws()` ensures a fresh environment for each build.
 
-2. **Configure Jenkins Pipeline**
-   - Add GitHub repo in Jenkins pipeline configuration
-   - Set SonarQube server details in Jenkins global configuration
-   - Add DockerHub credentials in Jenkins
+2. **Source Code Management**  
+   - Fetching code directly from GitHub repository.
 
-3. **Run Pipeline**
-   - Trigger build → Jenkins executes all stages automatically
+3. **Code Quality Analysis**  
+   - Integrated **SonarQube** for static code analysis.
 
-4. **Deploy with Docker Compose**
-   ```bash
-   docker-compose up -d
-   ```
+4. **Build Stage**  
+   - Compiled and packaged application using **Maven**.
 
----
+5. **Docker Image Build**  
+   - Created Docker images for both **App** and **Database** using separate Dockerfiles.
 
-## 🔒 Security
-- **Trivy** scans both app and db images for vulnerabilities before pushing to DockerHub.  
-- Ensures secure and compliant container images.
+6. **Security Scan**  
+   - Scanned both images with **Trivy** to detect vulnerabilities.
 
----
+7. **Push to DockerHub**  
+   - Successfully pushed app and db images to DockerHub registry.
 
-## ✅ Outcome
-- Fully automated CI/CD pipeline from **code commit → quality check → build → security scan → deployment**.  
-- Application and database run as containers orchestrated by Docker Compose.
+8. **Deployment**  
+   - Deployed using **Docker Compose**.  
+   - Application container depends on the database container.  
+   - Verified application accessibility after deployment.
 
 ---
 
-## 📖 Notes
-- Ensure EC2 instance has sufficient resources (CPU/RAM) for Jenkins, SonarQube, and Docker.  
-- SonarQube requires Java; Eclipse Temurin plugin ensures compatibility.  
-- DockerHub credentials must be securely stored in Jenkins credentials manager.
+## ✅ Outcomes
+- Automated CI/CD pipeline from source to deployment.
+- Improved code quality and security with SonarQube + Trivy.
+- Containerized application with dependency management.
+- Deployment simplified using Docker Compose.
 
+---
+
+## 🛠️ Tech Stack
+- **AWS EC2**
+- **Jenkins**
+- **SonarQube**
+- **Maven**
+- **Docker & Docker Compose**
+- **Trivy**
+- **GitHub**
+
+---
+
+## 📚 Learnings
+- End-to-end CI/CD automation
+- Integration of security and quality checks in pipelines
+- Containerization best practices
+- Cloud-based deployment using AWS
+
+---
+
+## 🔗 Future Enhancements
+- Add Kubernetes deployment for scalability
+- Integrate monitoring with Prometheus/Grafana
+- Automate infrastructure provisioning with Terraform
