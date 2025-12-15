@@ -5,7 +5,8 @@ This project demonstrates a complete CI/CD pipeline setup on an AWS EC2 instance
 The pipeline automates code fetching, quality analysis, building, containerization, security scanning, and deployment.
 
 ---
-![Uploading Untitled Diagram.drawio.png…]()
+
+<img width="827" height="583" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/948c0db2-94bb-4db3-9044-989fd3cb60b0" />
 
 
 ## ⚙️ Infrastructure
