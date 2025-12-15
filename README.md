@@ -6,6 +6,8 @@ The pipeline automates code fetching, quality analysis, building, containerizati
 
 ---
 
+<img width="1600" height="900" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/01c55ada-c442-4019-ad37-44edb20a672b" />
+
 ## ⚙️ Infrastructure
 - **AWS EC2 Instance:** t2.large
 - **Operating System:** Amazon Linux 2
